@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
 def uppercase(s):
+    result = ""
     for char in s:
         if 'a' <= char <= 'z':
             offset = ord('A') - ord('a')
-            print("{:c}".format(ord(char) + offset), end='')
+            result += "{:c}".format(ord(char) + offset)
         else:
-            print(char, end='')
+            result += char
 
-    print()
+    print(result)
 
 
 if __name__ == "__main__":
