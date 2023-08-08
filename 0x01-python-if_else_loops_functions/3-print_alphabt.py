@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+output = ""
 for i in range(ord('a'), ord('z') + 1):
     if chr(i) not in ['q', 'e']:
-        print(chr(i), end='')
+        output += chr(i)
+print(output)
