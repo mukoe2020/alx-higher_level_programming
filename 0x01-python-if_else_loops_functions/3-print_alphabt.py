@@ -4,4 +4,4 @@ for i in range(ord('a'), ord('z') + 1):
     if chr(i) not in ['q', 'e']:
         output += chr(i)
 
-print("{}".format(output))
+print("{}".format(output), end='')
