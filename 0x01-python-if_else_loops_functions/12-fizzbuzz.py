@@ -9,6 +9,7 @@ def fizzbuzz():
             output += "Buzz"
         print(output or num, end=" ")
 
+
 if __name__ == "__main__":
     fizzbuzz()
     print("")
