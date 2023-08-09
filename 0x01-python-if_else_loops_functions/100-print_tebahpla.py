@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-for i in range(25, -1, -1):
-    print("{:c}".format(ord('z') - i), end="")
-    print("{:c}".format(ord('Z') - i), end="")
-print():
-    
+h = 0
+for j in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(j - h)), end="")
+    h = 32 if h == 0 else 
