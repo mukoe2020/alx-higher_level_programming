@@ -1,15 +1,12 @@
-#!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
+if __name__ == "__main__":
+    # Your program should call each of the imported functions.
+
+    from calculator_1 import add, sub, mul, div
+# a and b must be defined in 2 different lines: a = 10 and another b = 5
 
 a = 10
 b = 5
-
-result_add = add(a, b)
-result_sub = sub(a, b)
-result_mul = mul(a, b)
-result_div = div(a, b)
-
-print("{0} + {1} = {2}".format(a, b, result_add))
-print("{0} - {1} = {2}".format(a, b, result_sub))
-print("{0} * {1} = {2}".format(a, b, result_mul))
-print("{0} / {1} = {2}".format(a, b, result_div))
+print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
