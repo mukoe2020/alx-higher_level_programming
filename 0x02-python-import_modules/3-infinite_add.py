@@ -1,14 +1,10 @@
 #!/usr/bin/python3
 
-import sys
-
-
-def main():
-    argv = sys.argv[1:]
-    total_sum = sum(int(arg) for arg in argv)
-
-    print("Sum of arguments: {}".format(total_sum))
-
-
 if __name__ == "__main__":
-    main()
+    import sys
+    initial_res = 0
+
+    for argument in sys.argv:
+        if argument != sys.argv[0]:
+            initial_res += int(argument)
+    print(initial_res)
