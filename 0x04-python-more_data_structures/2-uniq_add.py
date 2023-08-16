@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """
 this is a function to add uniq intergers
 i start by creating an empty set and checki f the integer is not alredy added
