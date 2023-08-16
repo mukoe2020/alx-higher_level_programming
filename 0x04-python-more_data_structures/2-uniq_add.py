@@ -16,5 +16,3 @@ def uniq_add(my_list=[]):
             unique_integers.add(num)
 
     return total_sum
-
-
