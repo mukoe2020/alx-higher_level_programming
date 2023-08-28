@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def safe_function(fct, *args):
     try:
         result = fct(*args)
@@ -8,6 +9,7 @@ def safe_function(fct, *args):
     except Exception as e:
         sys.stderr.write("Exception: {}\n".format(e))
         return None
+
 
 if __name__ == "__main__":
     def my_div(a, b):
@@ -28,4 +30,3 @@ if __name__ == "__main__":
 
     result = safe_function(print_list, [1, 2, 3, 4], 10)
     print("result of print_list: {}".format(result))
-
