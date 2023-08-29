@@ -2,6 +2,8 @@
 """
 this function represents a simple square class
 """
+
+
 class Square:
     """
     thats the square class
