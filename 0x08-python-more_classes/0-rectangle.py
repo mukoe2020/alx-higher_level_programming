@@ -3,7 +3,9 @@
 this a module to print an empty class of a rectangle
 
 """
-
-
-class Rectangle:
-    pass  # This is an empty class definition
+class rectangle: 
+    """                                                                         
+      thats the rectangle class 
+    """                                                                        
+    def __init__(self):                                                         
+     pass   
