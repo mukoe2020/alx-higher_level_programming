@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 """
-this a module to print an empty class of a rectangle
-
+class that defines a rectangle
 """
 
 
-class rectangle:
+class Rectangle:
     """
-    thats the rectangle class
-
+    Representing the rectangle
     """
     pass
