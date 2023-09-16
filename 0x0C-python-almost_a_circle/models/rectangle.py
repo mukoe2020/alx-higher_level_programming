@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from models.base import Base
 """
 Rectangle class that inherits from the Base class.
@@ -60,53 +61,6 @@ class Rectangle(Base):
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def update(self, *args):
-        """
-        Assigns arguments to the attributes in the specified order
-
-        Args:
-        *args: Variable-length arguments in the specified order.
-        """
-        num_args = len(args)
-        if num_args >= 1:
-            self.id = args[0]
-        if num_args >= 2:
-            self.width = args[1]
-        if num_args >= 3:
-            self.height = args[2]
-        if num_args >= 4:
-            self.x = args[3]
-        if num_args >= 5:
-            self.y = args[4]
-
-    def update(self, *args, **kwargs):
-        """
-        Assigns a key/value argument to the attributes of the rectangle.
-
-        Args:
-        *args: Variable-length argument list representing positional arguments.
-        This argument list is skipped if it exists and is not empty.
-        **kwargs: Variable-lengt argument representing attribute key-value pairs.
-        Each key represents an attribute of the rectangle.
-        This argument type is known as a "keyworded argument".
-        Argument order is not important.
-        """
-    if args and len(args) > 0:
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
-    else:
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-
     @property
     def width(self):
         """Getter for the width attribute."""
@@ -162,3 +116,32 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0.")
         self.__y = value
+
+    def update(self, *args, **kwargs):
+        """Method that updates the rectangle class"""
+        if args and len(args) != 0:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
