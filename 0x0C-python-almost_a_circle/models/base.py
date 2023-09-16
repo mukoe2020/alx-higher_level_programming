@@ -61,3 +61,59 @@ class Base:
 
         with open(filename, "w") as file:
             file.write(cls.to_json_string(data))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Args:
+        json_string (str): The JSON string representing a list of dictionaries.
+
+        Returns:
+        list: The list represented by the JSON string.
+        """
+
+        if json_string is None or len(json_string) == 0:
+            return []
+
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Args:
+        **dictionary:the attributes of the instance.
+
+        Returns:
+        Base:Instance with attributes already set based on provided dictionary.
+        """
+
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = None
+
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns:
+        list: List of instances loaded from the JSON file.
+        """
+
+        filename = cls.__name__ + ".json"
+        instances = []
+
+        try:
+            with open(filename, "r") as file:
+                data = file.read()
+                dictionary_list = cls.from_json_string(data)
+                instances = [cls.create(**d) for d in dictionary_list]
+
+        except FileNotFoundError:
+            return []
+
+    return instances
