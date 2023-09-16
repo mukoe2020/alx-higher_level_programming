@@ -1,4 +1,8 @@
+#!/usr/bin/python3
 from models.rectangle import Rectangle
+"""
+importing square module
+"""
 
 
 class Square(Rectangle):
@@ -60,3 +64,17 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of the square.
+
+        Returns:
+        dict: The dictionary representing the square.
+        """
+        return {
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y
+        }
