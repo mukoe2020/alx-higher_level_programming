@@ -1,9 +1,6 @@
 #!/usr/bin/python3
+"""Defining a class square, inheriting from the class rectangle"""
 from models.rectangle import Rectangle
-"""
-importing square module
-"""
-
 
 class Square(Rectangle):
     """
